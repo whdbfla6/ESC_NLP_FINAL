@@ -44,7 +44,7 @@ def create_source_mask(source):
     
     #padding mask: 실질적인 의미를 갖지 않는 <pad> 토큰을 마스킹
     boolean tensor에 대해서는 true를 가진 position들이 입력으로 취급하지 않음.
-    <pad>만 true
+    즉, <pad>만 true
     
     """
     source_length = source.shape[1]
