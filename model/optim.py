@@ -13,7 +13,7 @@ class ScheduledAdam():  # Adam optimizer + learning rate scheduler
         self.current_steps += 1
         lr = self.init_lr * self.get_scale()
         """
-        warmup steps 전까지는 학습이 잘되지 않은 상태이므로 lr을 빠르게 증가시켜 변화를 크게 하고,
+        warmup steps 전까지는 학습이 잘되지 않은 상태이므로 lr을 빠르게 증가시켜 변화를 크게 하고
         후에는 어느 정도의 학습이 이루어진 상태이므로 lr를 천천히 감소시켜 변화를 작게 함
         """
         for p in self.optimizer.param_groups:
