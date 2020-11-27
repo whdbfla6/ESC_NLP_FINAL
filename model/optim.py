@@ -3,7 +3,7 @@ import numpy as np
 
 class ScheduledAdam():  # Adam optimizer + learning rate scheduler
     def __init__(self, optimizer, hidden_dim, warm_steps):
-        self.init_lr = np.power(hidden_dim, -0.5)      #d_model_(-0.5)
+        self.init_lr = np.power(hidden_dim, -0.5)  #d_model_(-0.5)
         self.optimizer = optimizer  #optimizer= torch.optim.Adam(beta_1=0.9,beta_2=0.98, epsilon=1e-9, lr)
         self.current_steps = 0
         self.warm_steps = warm_steps # warm_steps=4000
