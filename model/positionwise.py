@@ -21,7 +21,7 @@ class PositionWiseFeedForward(nn.Module):
     def forward(self, x):
         # x = [batch size, sentence length, hidden dim]
 
-	# nn.Conv1d에 적용하기 위해 x의 차원 재구성 (transpose는 2D에만 사용가능하기 때문에 permute 써줌)
+	# nn.Conv1d에 적용하기 위해 x의 차원 재구성 (transpose는 2D에만 사용가능하기 때문에 permute )
         x = x.permute(0, 2, 1)                        # x = [batch size, hidden dim, sentence length]
         
 	"""
