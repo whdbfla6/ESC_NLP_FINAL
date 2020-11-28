@@ -99,7 +99,7 @@ class Decoder(nn.Module):
         # 디코더 layer에 인풋값(target,encoder_output)을 넣는다. 인코더는 6개의 layer로 구성되어있기 때문에 반복해서 연산 수행
         # [batch size, 문장길이, 512] 
 
-        # output = torch.matmul(target, self.token_embedding.weight.transpose(0, 1))
-        #이부분은 논문에 안 나온 부분인거 같은데.. 논의 후 수정
+        output = torch.matmul(target, self.token_embedding.weight.transpose(0, 1))
+        # dense layer 부분 [batch size, target 문장 길이, output dimension = corpus 단어 수]
         
-        return target, attention_map
+        return output, attention_map
