@@ -61,6 +61,7 @@ def build_vocab(config):
     data_dir = Path().cwd() / 'data'
     train_file = os.path.join(data_dir, 'train.csv')
     train_data = pd.read_csv(train_file, encoding='utf-8')
+    train_data = train_data[1:10000]
     train_data = convert_to_dataset(train_data, kor, eng)
 
     print(f'Build vocabulary using torchtext . . .')
